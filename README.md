@@ -88,7 +88,7 @@ This was just a prototype to clone a function of a gambling website. It is far f
 
 If you want working Rust code to reuse, refer to the [Rust Full Stack repository](https://github.com/steadylearner/Rust-Full-Stack).
 
-* Proper error handling with [thiserror](https://github.com/dtolnay/thiserror) and [anyhow].
+* Proper error handling with [thiserror](https://github.com/dtolnay/thiserror) and [anyhow](https://github.com/dtolnay/thiserror).
 
 * [Domain driven project design](https://github.com/golang-standards/project-layout) instead of [the current group by function(models/, handlers/, routes/ etc) and remove utils/ and other unecessary ones](https://www.youtube.com/watch?v=oL6JBUk6tj0). It was difficult to structure the Warp app this way.
 
