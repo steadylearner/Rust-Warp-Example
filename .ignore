@@ -1,0 +1,12 @@
+# This is for $cargo watch.
+# The rules are equal to .gitignore.
+# https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+
+cookie.txt
+*.db
+.ignore
+
+*.css
+*.html
+*.js
+

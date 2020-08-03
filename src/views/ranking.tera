@@ -1,0 +1,53 @@
+{% extends "index.tera" %}
+
+<head>
+  {% block head %}
+    {% block title %}Game Ranking{% endblock title %}
+  {% endblock head %}
+  {% block css %}
+    {{ super() }}
+    <link rel="stylesheet" href="public/css/views/ranking.css">
+  {% endblock css %}
+</head>
+{# Move it to public/css/views/<filename>.css later #}
+{# <style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #121212;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #ff7676;
+  }
+</style> #}
+<body>
+  {% block content %}
+    <h1>Game Ranking</h1>
+    <table>
+      <tr>
+        <th>Rank</th>
+        <th>Email</th>
+        <th>Total Prize</th>
+      </tr>
+      {# https://tera.netlify.com/docs/#for #}
+      {% for ranking in game_ranking_list %}
+        <tr>
+          <th>{{loop.index}}</th>
+          <th>{{ranking.email}}</th>
+          <th>{{ranking.total_prize}}</th>
+        </tr>
+      {% else %}
+        No game records yet.
+      {% endfor %}
+    </table>
+  {% endblock content %}
+</body>
+</html>
+

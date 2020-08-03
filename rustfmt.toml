@@ -1,0 +1,6 @@
+# https://rust-lang.github.io/rustfmt/
+
+ignore = [
+    "src/server.rs",
+    "src/api/",
+]

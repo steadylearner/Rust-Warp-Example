@@ -1,0 +1,95 @@
+[package]
+name = "gamble"
+version = "0.0.0"
+authors = ["https://www.steadylearner.com"]
+edition = "2018"
+autobins = false
+build = "build.rs"
+
+# `cargo run --bin name` will point to the path we define here(Should use autobins = false)
+[[bin]]
+name = "main" # Use web or whatever later.
+path = "src/main.rs"
+
+[[bin]]
+name = "user"
+path = "src/bin/user.rs"
+[[bin]]
+name = "cash"
+path = "src/bin/cash.rs"
+
+[[bin]]
+name = "car"
+path = "src/bin/car.rs"
+[[bin]]
+name = "car_with_user"
+path = "src/bin/car_with_user.rs"
+
+[[bin]]
+name = "game"
+path = "src/bin/game.rs"
+[[bin]]
+name = "game_play"
+path = "src/bin/game_play.rs"
+[[bin]]
+name = "game_with_user"
+path = "src/bin/game_with_user.rs"
+[[bin]]
+name = "game_ranking"
+path = "src/bin/game_ranking.rs"
+
+# Test whatever simple Rust code here.
+[[bin]]
+name = "draft"
+path = "src/bin/draft.rs"
+
+[lib]
+name = "gamble"
+path = "src/lib.rs"
+
+[dependencies]
+chrono = { version = "0.4.11", features = ["serde"] }
+
+# CLI and stdout
+console = "0.10.0"
+prettytable-rs = "0.8.0"
+
+# SQLite and to reuse connection etc.
+# I used $cargo tree -d to find the duplicate dependency problem.
+lazy_static = "1.4.0"
+rusqlite = { version = "0.22.0", features = ["chrono"] }
+r2d2 = "0.8.8"
+r2d2_sqlite = "0.15.0"
+
+#security
+rand = "0.7.3"
+rust-argon2 = "0.8.2"
+
+# Web app with Warp
+# https://www.steadylearner.com/blog/read/How-to-use-Rust-Warp
+tokio = { version = "0.2", features = ["macros"] }
+warp = "0.2.2"
+
+# Serde
+serde = { version = "1.0.101", features = ["derive"] }
+serde_json = "1.0.41"
+serde_derive = "1.0.101"
+
+# Tempalte Engine
+tera = "1.2.0"
+
+# Pretty_env_logger uses env_logger and env_logger uses log.
+# So, you just need to know how to use pretty_env_logger mostly.
+# Log, debug etc.
+log = "0.4.8"
+pretty_env_logger = "0.4.0"
+bincode = "1.2.1"
+futures = "0.3.4"
+
+# Error handling, https://crates.io/crates/thiserror
+# You can also use anyhow https://github.com/dtolnay/anyhow
+# Or make custom_error handler with Warp API.
+# thiserror = "1.0.15"
+# anyhow = "1.0.28"
+
+

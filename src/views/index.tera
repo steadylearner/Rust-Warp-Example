@@ -1,0 +1,51 @@
+{# It will be mostly used the render error pages. #}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block head %}
+    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} Game Demo by © {{name}} {% endblock title %}</title>
+  {% endblock head %}
+  {% block css %}
+    <link rel="stylesheet" href="public/css/views/index.css">
+  {% endblock css %}
+</head>
+<body>
+  <main>
+    <header id="menu">
+    {% block topnav %}
+      <a class="logo" href="/"><b style="font-size: 1.2rem;">©ode</b></a>
+      <form action="/search" method="GET">
+        <input
+          autofocus
+          class="search-input"
+          placeholder="Enter a news topic"
+          type="search"
+          name="q"
+        >
+      </form>
+      {# <a href="https://github.com/freshman-tech/news" class="button
+        github-button">Sign in</a> #}
+      <a href="https://github.com/freshman-tech/news" class="button
+        github-button">Sign Up</a>
+    {% endblock topnav %}
+    </header>
+    <div style="margin-top: 2rem;" id="content">
+      {% block content %}
+        <section class="container">
+
+        </section>
+      {% endblock content %}
+    </div>
+    {# <div id="footer">
+        {% block footer %}
+        &copy; Copyright 2020 by <a href="https://www.steadylearner.com/">Steadylearner</a>.
+        {% endblock footer %}
+    </div> #}
+  </main>
+</body>
+</html>
