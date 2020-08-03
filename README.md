@@ -12,9 +12,9 @@ The payload will be **session.rs** file.
 
 ## How to test it
 
-You can use **python3 dev.py** or $cargo run --bin main or $RUST_LOG=debug cargo run --bin main to test a web server.
+You can use **$python3 dev.py** or **$cargo run --bin main** or **$RUST_LOG=debug cargo run --bin main** to test a web server.
 
-If you are confused, start with **hello** and **hi** apis.
+If you want to start simple, start with **hello** and **hi** apis.
 
 You can also test other CLI commands with cargo run --bin name. Refer to **Cargo.toml** for that.
 
@@ -96,9 +96,9 @@ If you want working Rust code to reuse, refer to the [Rust Full Stack repository
 
 * Find how to reuse SQLite connection or substitute it with [Postgresql and reuse connection with lazy_static](https://github.com/steadylearner/Rust-Full-Stack/tree/master/warp/database/2.%20with_db_pool).
 
-* Currently, error responses from Warp relevant code are not perfect. It will be only worth doing that if you develop it with frontend part also.
+* Currently, error responses from Warp relevant code are not that relevant. It will be only worth doing that if you develop it with frontend part also.
 
-* User session needs a timeout relevant code. You can find better solutions or use [prebuilt ones such as Redis etc](https://github.com/steadylearner/Rust-Full-Stack/tree/master/microservices_with_docker).
+* User session needs the timeout relevant code. You can find better solutions or use [prebuilt ones such as Redis etc](https://github.com/steadylearner/Rust-Full-Stack/tree/master/microservices_with_docker).
 
 * [Include tests](https://github.com/steadylearner/Rust-Full-Stack/tree/master/microservices_with_docker/warp_client/src/tests/user) for every possible routes instead of CURL commands.
 
@@ -112,4 +112,4 @@ I did code with it a few months ago so they are only what I can think currently 
 
 There are not many Rust web server examples. I wouldn't write this way again if the development were for myself. But, hope you can save the compile time with it at least.
 
-Frontend part is up to you. I wrote it because I had to make a demo video to get payment. [You can implement it on your own](https://github.com/steadylearner/Rust-Full-Stack/tree/master/parcel-react) referring to the example above.
+Frontend part is up to you. [You can implement it on your own](https://github.com/steadylearner/Rust-Full-Stack/tree/master/parcel-react) referring to the example above.
